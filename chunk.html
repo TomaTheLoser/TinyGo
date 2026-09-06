@@ -94,12 +94,7 @@
   <p>Each Chunk monitors the distance between the player and a location node. When the player gets close enough, the scene is added to the tree. When they move away, it's removed and freed.</p>
   <p>Preloading instantiates the scene before it's visible, so it's ready the moment the player enters range — no pop-in.</p>
 
-  <div class="diagram">
-    <span class="dim">── far away ──────────────────── close ──&gt;</span><br>
-    <span class="dim">                 </span><span class="acc">PreLoad_Distance</span><span class="dim">  </span><span class="acc">ChunkDistance</span><br>
-    <span class="dim">unloaded         </span><span class="acc">[ instantiate ]</span><span class="dim">   </span><span class="acc">[ add to tree ]</span><br>
-    <span class="dim">                 preloaded in mem  visible in game</span>
-  </div>
+
 
   <h2>Setup</h2>
   <p>Create one Chunk instance per scene you want to stream. Assign properties in <code>_Ready()</code> and call <code>Update()</code> every process frame.</p>
